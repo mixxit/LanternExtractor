@@ -36,9 +36,8 @@ namespace LanternExtractor
             _settings = new Settings("settings.txt", _logger);
             _settings.Initialize();
 
-#if DEBUG
-            ExtractZone("arena");
-#else
+            // Moved default shortname debug value to debug window in project properties
+
             if (args.Length != 1)
             {
                 _logger.LogInfo("Format: lantern.exe <shortname>");
@@ -59,7 +58,6 @@ namespace LanternExtractor
                 //var shortName = eqFiles[i];
                 ExtractZone(file);
             }
-#endif
         }
 
         /// <summary>
