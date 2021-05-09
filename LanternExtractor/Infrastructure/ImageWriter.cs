@@ -32,7 +32,7 @@ namespace LanternExtractor.Infrastructure
                 return;
             }
 
-            var image = new Bitmap(bytes);
+            var image = new Bitmap(DDSConverter.ConvertDds(bytes));
 
             Bitmap cloneBitmap;
 
